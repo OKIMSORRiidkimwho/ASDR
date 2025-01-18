@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>超自然防御与研究所</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="collapsible-content.css">
+    <link rel="stylesheet" href="cssPartsStyles\overflowScroll.css">
+    <link rel="stylesheet" href="cssPartsStyles\button1.css">
+
+</head>
+
+<body>
+
+    <!-- 页眉部分 -->
+    <header>
+        <div class="menu-background">
+            <img src="ASDR-logo.png" alt="mainlogo">
+            <h1 id="chasdrname">超自然防御与研究所</h1>
+            <h1 id="englishasdrname" >Agency for Supernatural Defense and Research</h1>
+            <nav class="visible">
+                <ul>
+                    <li><a href="#home">主页</a></li>
+                    <li><a href="#about">关于我们</a></li>
+                    <li><a href="#research">研究领域</a></li>
+                    <li><a href="#mission">我们的使命</a></li>
+                    <li><a href="#projects">负责项目列表</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- 主内容部分 -->
+    <main>
+        <section id="home" class="collapsible-section">
+            <h2>主页</h2>
+            <div class="collapsible-content">
+                <p>欢迎来到超自然防御与研究所（ASDR）</p>
+
+                <p>自从一封神秘的信揭示了我们宇宙中的漏洞，这个世界便出现了异常现象和超自然项目。这些异常突破常理，违背了已知的自然法则，威胁着现实的稳定。而我们的使命，正是收容、研究并管控这些异常，确保世界的秩序不被扰乱。</p>
+                <p> ASDR研究所是全球最先进的超自然现象研究机构，我们不懈努力在科学和未知的前沿探险，寻找解释那些超然的现象与规则。探索我们的研究成果，了解我们如何保护这个世界的安全与稳定。</p>
+            </div>
+            <button class="toggle-button">∨</button>
+        </section>
+
+        <section id="about" class="collapsible-section">
+            <h2>关于我们</h2>
+            <div class="collapsible-content">
+                <p>超自然防御与研究所成立于XXXX年，作为国家的防御机构，我们专注于对超自然现象的研究和分析，提供科学依据和解决方案。</p>
+            </div>
+            <button class="toggle-button">∨</button>
+        </section>
+
+        <section id="research" class="collapsible-section">
+            <h2>研究领域</h2>
+            <div class="collapsible-content">
+                <p>我们的研究涵盖多个领域，包括但不限于：</p>
+                <ul>
+                    <li>超自然事件调查</li>
+                    <li>数据分析与处理</li>
+                    <li>应急响应策略</li>
+                    <li>科学技术应用</li>
+                </ul>
+            </div>
+            <button class="toggle-button">∨</button>
+        </section>
+
+        <section id="mission" class="collapsible-section">
+            <h2>我们的使命</h2>
+            <div class="collapsible-content">
+                <p>我们的使命是通过科学研究和技术应用，确保社会对超自然现象的了解与防范，保障每一位公民的安全。</p>
+            </div>
+            <button class="toggle-button">∨</button>
+        </section>
+
+        <section id="projects" class="collapsible-section">
+            <h2>负责项目列表</h2>
+
+            <!-- 导航栏 -->
+            <div class="project-nav">
+                <button class="page-button" data-page="0">001-100</button>
+                <button class="page-button" data-page="1">101-200</button>
+                <button class="page-button" data-page="2">201-300</button>
+                <button class="page-button" data-page="3">301-400</button>
+                <button class="page-button" data-page="4">401-500</button>
+                <button class="page-button" data-page="5">501-600</button>
+                <button class="page-button" data-page="6">601-700</button>
+                <button class="page-button" data-page="7">701-800</button>
+                <button class="page-button" data-page="8">801-900</button>
+                <button class="page-button" data-page="9">901-999</button>
+            </div>
+
+            <div class="collapsible-content">
+                <ul id="project-list" class="project-list">
+                    <!-- 项目列表将由 JavaScript 动态填充 -->
+                </ul>
+            </div>
+            <button class="toggle-button">∨</button>
+        </section>
+
+
+    </main>
+
+
+
+
+
+    <!-- 页脚部分 -->
+    <footer>
+        <p>版权所有 © 2024 超自然防御与研究所</p>
+    </footer>
+
+
+
+
+    <script>
+        let lastScrollTop = 0;
+        const nav = document.querySelector('nav');
+        const header = document.querySelector('.menu-background');
+
+        window.addEventListener('scroll', function () {
+            let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            if (scrollTop > lastScrollTop) {
+                nav.classList.remove('visible');
+                nav.classList.add('hidden');
+                header.style.transform = 'translateY(-100%)'; // 同步移动菜单背景
+            } else {
+                nav.classList.remove('hidden');
+                nav.classList.add('visible');
+                header.style.transform = 'translateY(0)'; // 同步移动菜单背景
+            }
+            lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+        });
+    </script>
+
+    <script src="collapsible-contentScript.js"></script>
+    <script src="loadProjects.js"></script>
+
+
+
+</body>
+
+</html>

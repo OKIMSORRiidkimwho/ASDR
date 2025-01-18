@@ -1,0 +1,179 @@
+body {
+    background-color: rgb(238, 238, 238);
+    color: black;
+    font-family: '宋体', serif;
+    margin: 0;
+    line-height: 1.6;
+    font-size: 17px;
+}
+
+header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    margin-top: 15px;
+    
+}
+
+.menu-background {
+    background: linear-gradient(to bottom, #795548, #d32f2f);
+    transition: transform 0.3s ease;
+    /* padding-bottom: 70px; */
+    width: 100%;
+    margin-top: -20px;
+    /* 向上移动30px */
+    /* height: 60px; */
+    /* 增加高度 */
+    position: absolute;
+}
+
+header h1{
+    /* font-family: '黑体', sans-serif; */
+    font-weight: bold;
+    color: white;
+    font-size: 41px;
+    margin-top: 9px;
+}
+
+#englishasdrname{
+    font-size: 10px;
+    margin-top: -30px;
+    /* display: inline; */
+}
+
+header img{
+    float: left;
+    width: 220px;
+    height: auto;
+    display: inline;
+    margin-right: 2px;
+    padding: 13px;
+}
+
+header nav {
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    pointer-events: auto;
+    /* backdrop-filter: blur(1px); */
+    margin-top: 15px;
+    font-size: 15px;
+}
+
+header nav.hidden {
+    transform: translateY(-100%);
+    opacity: 0;
+    pointer-events: none;
+}
+
+
+header nav.visible {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto;
+}
+
+
+header nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: flex-start;
+    white-space: nowrap;
+    overflow-x: auto;
+    scrollbar-width: thin;
+}
+
+header nav ul::-webkit-scrollbar {
+    height: 20px;
+}
+
+header nav ul::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 4px;
+}
+
+header nav ul::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+header nav ul li {
+    margin-right: 20px;
+    /* 增加栏目间隔 */
+}
+
+header nav ul li a {
+    color: white;
+    /* 改为白色 */
+    font-family: '黑体', sans-serif;
+    /* 改为黑体 */
+    font-weight: bold;
+    /* 加粗 */
+    text-decoration: none;
+    /* 取消下划线 */
+    padding-left: 5px;
+    /* 向右移动约5px */
+}
+
+header nav ul li a:hover {
+    color: red; /* 鼠标悬停时文本变为红色 */
+    text-decoration: underline; /* 鼠标悬停时添加下划线 */
+}
+
+main {
+    padding: 100px 20px 20px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* section { 
+    margin-bottom: 30px;
+    background-color: rgb(255, 255, 255);
+    padding: 20px;
+} */
+section {
+    position: relative;
+    border: 1px solid #989898;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+
+h2 {
+    margin: 0;
+    font-size: 26px;
+    color: #d32f2f;
+    font-weight: bold;
+}
+
+footer {
+    text-align: center;
+    padding: 10px 0;
+    background-color: #b8b8b8;
+    font-size: 18px;
+}
+
+.project-list {
+    margin: 20px 0;
+    list-style-type: none;
+    padding: 0;
+}
+
+.project-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+}
+
+.collapse-button {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 15px;
+}
