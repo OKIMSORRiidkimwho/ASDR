@@ -1096,6 +1096,19 @@ function loadProjects(page) {
             <span>${project.id} - ${project.title}</span>
             <button class="collapse-button">详情</button>
         `;
+
+        // 查找刚生成的按钮并绑定点击事件
+        const button = listItem.querySelector('.collapse-button');
+        button.addEventListener('click', () => {
+            // 跳转到对应的详情页面
+            if (project.title) {
+                // 假设详情页面 URL 格式为 `/details/<项目ID>.html`
+                window.location.href = `/details/${project.id}.html`;
+            } else {
+                alert('该项目暂无详情页！');
+            }
+        });
+
         projectList.appendChild(listItem);
     });
 }
